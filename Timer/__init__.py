@@ -5,9 +5,9 @@ from aqt.utils import showInfo
 # import all of the Qt GUI library
 from aqt.qt import *
 # import PyQT libraries
-from PyQt5.QtCore import QTime
-from PyQt5 import QtCore, QtGui
-from PyQt5.QtWidgets import QPushButton, QLCDNumber
+from PyQt6.QtCore import QTime
+from PyQt6 import QtCore, QtGui
+from PyQt6.QtWidgets import QPushButton, QLCDNumber
 
 # import TimerWindow class
 import os
@@ -27,7 +27,7 @@ def timerFunction():
     
     # Get Current Screen Resolution
     QApp = QCoreApplication.instance()
-    screenResolution = QApp.desktop().screenGeometry()
+    screenResolution = QtGui.QGuiApplication.primaryScreen().availableGeometry()
     screenWidth = screenResolution.width()
     screenHeight = screenResolution.height()
     
